@@ -22,3 +22,24 @@ window.onload = () => {
     var greeter = new Greeter(el);
     greeter.start(burger, calories);
 };
+
+
+const numLivesForCat = 9;
+const kitty = {
+    name: "Aurora",
+    numLives: numLivesForCat,
+}
+
+// Error: A kitty contst, de a belseje mégis változtatható (lásd lent)
+//kitty = {
+//    name: "Danielle",
+//    numLives: numLivesForCat
+//};
+
+// all "okay"
+kitty.name = "Rory";
+kitty.name = "Kitty";
+kitty.name = "Cat";
+kitty.numLives--;
+
+

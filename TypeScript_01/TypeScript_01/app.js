@@ -18,4 +18,19 @@ window.onload = function () {
     var greeter = new Greeter(el);
     greeter.start(burger, calories);
 };
+var numLivesForCat = 9;
+var kitty = {
+    name: "Aurora",
+    numLives: numLivesForCat,
+};
+// Error: A kitty contst, de a belseje mégis változtatható (lásd lent)
+//kitty = {
+//    name: "Danielle",
+//    numLives: numLivesForCat
+//};
+// all "okay"
+kitty.name = "Rory";
+kitty.name = "Kitty";
+kitty.name = "Cat";
+kitty.numLives--;
 //# sourceMappingURL=app.js.map
