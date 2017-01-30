@@ -5,32 +5,22 @@ var Greeter = (function () {
         this.span = document.createElement('span');
         this.element.appendChild(this.span);
     }
-    Greeter.prototype.start = function (food, energy) {
-        this.span.innerHTML = "Our " + food + " has " + energy + " calories.";
+    // We tell our function to expect an object that fulfills the Food interface. 
+    // This way we know that the properties we need will always be available.
+    Greeter.prototype.start = function (food) {
+        this.span.innerHTML = "Our " + food.name + " has " + food.calories + " calories.";
     };
     return Greeter;
 }());
-var burger = 'hamburger', // String 
-calories = 300, // Numeric
-tasty = true; // Boolean
+// We define an object that has all of the properties the Food interface expects.
+// Notice that types will be inferred automatically.
+var ice_cream = {
+    name: "ice cream",
+    calories: 200
+};
 window.onload = function () {
     var el = document.getElementById('content');
     var greeter = new Greeter(el);
-    greeter.start(burger, calories);
+    greeter.start(ice_cream);
 };
-var numLivesForCat = 9;
-var kitty = {
-    name: "Aurora",
-    numLives: numLivesForCat,
-};
-// Error: A kitty contst, de a belseje mégis változtatható (lásd lent)
-//kitty = {
-//    name: "Danielle",
-//    numLives: numLivesForCat
-//};
-// all "okay"
-kitty.name = "Rory";
-kitty.name = "Kitty";
-kitty.name = "Cat";
-kitty.numLives--;
 //# sourceMappingURL=app.js.map

@@ -9,37 +9,29 @@
         this.element.appendChild(this.span);
     }
 
-    start(food: string, energy: number) {
-        this.span.innerHTML = "Our " + food + " has " + energy + " calories.";
+    // We tell our function to expect an object that fulfills the Food interface. 
+    // This way we know that the properties we need will always be available.
+    start(food: Food) {
+        this.span.innerHTML = "Our " + food.name + " has " + food.calories + " calories.";
     }
 }
-var burger: string = 'hamburger',     // String 
-    calories: number = 300,           // Numeric
-    tasty: boolean = true;            // Boolean
+
+// Here we define our Food interface, its properties, and their types.
+interface Food {
+    name: string;
+    calories: number;
+}
+
+// We define an object that has all of the properties the Food interface expects.
+// Notice that types will be inferred automatically.
+var ice_cream = {
+    name: "ice cream",
+    calories: 200
+}
 
 window.onload = () => {
     var el = document.getElementById('content');
     var greeter = new Greeter(el);
-    greeter.start(burger, calories);
+    greeter.start(ice_cream);
 };
-
-
-const numLivesForCat = 9;
-const kitty = {
-    name: "Aurora",
-    numLives: numLivesForCat,
-}
-
-// Error: A kitty contst, de a belseje mégis változtatható (lásd lent)
-//kitty = {
-//    name: "Danielle",
-//    numLives: numLivesForCat
-//};
-
-// all "okay"
-kitty.name = "Rory";
-kitty.name = "Kitty";
-kitty.name = "Cat";
-kitty.numLives--;
-
 
