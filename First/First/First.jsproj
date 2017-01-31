@@ -55,7 +55,10 @@
     <PackageCertificateKeyFile>First_TemporaryKey.pfx</PackageCertificateKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <None Include=".bin\node.cmd" />
+    <Content Include="input.txt" />
     <Content Include="main.js" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment

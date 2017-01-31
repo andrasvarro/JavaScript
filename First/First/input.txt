@@ -1,0 +1,9 @@
+﻿A node futtatása egy szálon történik, de azért van mit tenni.
+Gyerekfolyamatokat tudunk indítani, és azzal a páruzamosság kezelhető
+child_process modul a barátunk
+exec
+megadott parancs futtatása a konzolon
+spawn
+új folyamat indítása
+fork
+speciális spawn
