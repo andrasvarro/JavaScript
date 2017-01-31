@@ -1,8 +1,18 @@
 ﻿// to run use node.js
 // node main.js
-var fs = require("fs");
-var data = fs.readFile('input.txt', function (err, data){
-    if (err) return console.error(err);
-    console.log(data.toString());
-})
-console.log("Program Ended");
+var os = require("os");
+
+// Endianness
+console.log('endianness : ' + os.endianness());
+
+// OS type
+console.log('type : ' + os.type());
+
+// OS platform
+console.log('platform : ' + os.platform());
+
+// Total system memory
+console.log('total memory : ' + os.totalmem() + " bytes.");
+
+// Total free memory
+console.log('free memory : ' + os.freemem() + " bytes.");
